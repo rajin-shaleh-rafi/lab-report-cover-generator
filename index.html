@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lab Report Cover Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="form-box">
+<h3>Cover Details</h3>
+
+<label>Department</label>
+<select id="department">
+    <option>Leather Products Engineering</option>
+    <option>Leather Engineering</option>
+    <option>Footwear Engineering</option>
+</select>
+
+<label>Course Name</label>
+<input id="courseName" value="">
+
+<label>Course Code</label>
+<input id="courseCode" value="">
+
+<label>Student Name</label>
+<input id="studentName" value="">
+
+<label>Class Roll</label>
+<input id="roll" value="">
+
+<label>Registation</label>
+<input id="registration" value="">
+
+<label>Department</label>
+<input id="departmentInput" value="">
+
+<label>Teacher Name</label>
+<input id="teacherName" value="">
+
+<label>Teacher Designation</label>
+<input id="designation" value="">
+
+<label>Submission Date</label>
+<input id="date" value="">
+
+<button onclick="window.print()">Download as PDF</button>
+<button onclick="toggleDark()">Toggle Dark Mode</button>
+</div>
+
+<div class="preview">
+<div class="cover-wrapper">
+<div class="cover">
+
+<div class="top-logo">
+    <img src="logo.png">
+</div>
+
+<img src="bg-logo.png" class="bg-logo">
+
+<div class="header-text">
+DEPARTMENT OF <span id="pDepartment"></span><br>
+INSTITUTE OF LEATHER ENGINEERING AND TECHNOLOGY<br>
+UNIVERSITY OF DHAKA
+</div>
+
+<div class="lab-title">Lab Report</div>
+
+<div class="course-info">
+<b>Course name:</b> <span id="pCourseName"></span><br>
+<b>Course code:</b> <span id="pCourseCode"></span>
+</div>
+
+<div class="info-boxes">
+<div class="box-1">
+<b>Submitted by:</b><br><br>
+Name: <span id="pStudentName"></span><br>
+Class roll: <span id="pRoll"></span><br>
+Registation: <span id="pRegistation"></span><br>
+Department: <span id="pDepartmentInput"></span><br>
+</div>
+
+<div class="box-2">
+<b>Submitted to:</b><br><br>
+<span id="pTeacherName"></span><br>
+<span id="pDesignation"></span><br>
+Institute of Leather Engineering and Technology<br>
+University of Dhaka
+</div>
+</div>
+
+<div class="submission-date">
+Submission date: <span id="pDate"></span>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="credit">
+Made by <b>Rajin Shaleh Alam Rafi</b> |
+<a href="https://www.facebook.com/rsa.rafi/" target="_blank">Facebook</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
