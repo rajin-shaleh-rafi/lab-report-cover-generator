@@ -189,33 +189,76 @@ button {
     font-size: 1.1rem;
 }
 
-/* PRINT SETTINGS - THE FIX */
-@media print {
-    @page {
-        size: A4;
-        margin: 0; /* Critical for matching preview */
+/* =======================
+   RESPONSIVE DESIGN
+   ======================= */
+
+/* Tablets and small laptops */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: auto;
     }
 
-    body { background: white; }
-    
-    /* Hide everything except the cover */
-    .form-box, .button-group, .credit { display: none !important; }
-    
+    .form-box {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
     .preview {
-        padding: 0;
-        background: none;
-        overflow: visible;
-        display: block;
+        padding: 20px;
     }
-
-    .container { display: block; }
 
     .cover {
-        box-shadow: none;
-        border: none;
-        margin: 0;
-        transform: none !important; /* Ensure no scaling is applied */
-        page-break-after: avoid;
+        transform: scale(0.85);
+        transform-origin: top center;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .preview {
+        padding: 10px;
     }
 
+    .cover {
+        transform: scale(0.65);
+        transform-origin: top center;
+    }
+
+    .info-boxes {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .box-1,
+    .box-2 {
+        width: 100%;
+    }
+
+    .lab-title {
+        font-size: 24pt;
+    }
+
+    .course-info {
+        font-size: 14pt;
+    }
 }
+
+/* Very small phones */
+@media (max-width: 480px) {
+    .cover {
+        transform: scale(0.55);
+    }
+
+    .form-box {
+        padding: 1.5rem 1rem;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
