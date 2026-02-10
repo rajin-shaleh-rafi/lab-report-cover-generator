@@ -1,110 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Lab Report Cover Generator</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Report Cover Generator | Professional Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="container">
 
-<div class="form-box">
-<h3>Cover Details</h3>
+    <div class="form-box">
+        <div class="form-header">
+            <h3>✨ Cover Editor</h3>
+            <p>Fill in the details to update the A4 preview live.</p>
+        </div>
 
-<label>Department</label>
-<select id="department">
-    <option>Leather Products Engineering</option>
-    <option>Leather Engineering</option>
-    <option>Footwear Engineering</option>
-</select>
+        <div class="input-group">
+            <label>Select Department</label>
+            <select id="department">
+                <option>Leather Products Engineering</option>
+                <option>Leather Engineering</option>
+                <option>Footwear Engineering</option>
+            </select>
+        </div>
 
-<label>Course Name</label>
-<input id="courseName" value="">
+        <div class="grid-inputs">
+            <div class="input-group">
+                <label>Course Name</label>
+                <input id="courseName" placeholder="e.g. Leather Chemistry">
+            </div>
+            <div class="input-group">
+                <label>Course Code</label>
+                <input id="courseCode" placeholder="e.g. LPE-1201">
+            </div>
+        </div>
 
-<label>Course Code</label>
-<input id="courseCode" value="">
+        <div class="input-group">
+            <label>Student Name</label>
+            <input id="studentName" placeholder="Enter full name">
+        </div>
 
-<label>Student Name</label>
-<input id="studentName" value="">
+        <div class="grid-inputs">
+            <div class="input-group">
+                <label>Class Roll</label>
+                <input id="roll" placeholder="Roll No">
+            </div>
+            <div class="input-group">
+                <label>Registration</label>
+                <input id="registration" placeholder="Reg No">
+            </div>
+        </div>
 
-<label>Class Roll</label>
-<input id="roll" value="">
+        <div class="input-group">
+            <label>Department (Student)</label>
+            <input id="departmentInput" placeholder="Student's department">
+        </div>
 
-<label>Registation</label>
-<input id="registration" value="">
+        <div class="input-group">
+            <label>Teacher Name</label>
+            <input id="teacherName" placeholder="Instructor name">
+        </div>
 
-<label>Department</label>
-<input id="departmentInput" value="">
+        <div class="input-group">
+            <label>Teacher Designation</label>
+            <input id="designation" placeholder="e.g. Assistant Professor">
+        </div>
 
-<label>Teacher Name</label>
-<input id="teacherName" value="">
+        <div class="input-group">
+            <label>Submission Date</label>
+            <input id="date" placeholder="e.g. 24 October, 2024">
+        </div>
 
-<label>Teacher Designation</label>
-<input id="designation" value="">
+        <div class="button-group">
+            <button class="btn-primary" onclick="window.print()">Download PDF</button>
+            <button class="btn-secondary" onclick="toggleDark()">🌓 Theme</button>
+        </div>
 
-<label>Submission Date</label>
-<input id="date" value="">
-
-<button onclick="window.print()">Download as PDF</button>
-<button onclick="toggleDark()">Toggle Dark Mode</button>
+       <div class="credit">
+    <div class="developed-by">Developed by <span>Rajin Shaleh Alam Rafi</span></div>
+    <a href="https://www.facebook.com/rsa.rafi/" target="_blank" class="social-link">
+        <i class="fab fa-facebook"></i> Connect on Facebook
+    </a>
 </div>
+    </div>
 
-<div class="preview">
-<div class="cover-wrapper">
-<div class="cover">
+    <div class="preview">
+        <div class="cover-wrapper">
+            <div class="cover">
+                <img src="bg-logo.png" class="bg-logo">
 
-<div class="top-logo">
-    <img src="logo.png">
-</div>
+                <div class="top-logo">
+                    <img src="logo.png" alt="University Logo">
+                </div>
 
-<img src="bg-logo.png" class="bg-logo">
+                <div class="header-text">
+                    DEPARTMENT OF <span id="pDepartment"></span><br>
+                    INSTITUTE OF LEATHER ENGINEERING AND TECHNOLOGY<br>
+                    UNIVERSITY OF DHAKA
+                </div>
 
-<div class="header-text">
-DEPARTMENT OF <span id="pDepartment"></span><br>
-INSTITUTE OF LEATHER ENGINEERING AND TECHNOLOGY<br>
-UNIVERSITY OF DHAKA
-</div>
+                <div class="lab-title">Lab Report</div>
 
-<div class="lab-title">Lab Report</div>
+                <div class="course-info">
+                    <b>Course name:</b> <span id="pCourseName"></span><br>
+                    <b>Course code:</b> <span id="pCourseCode"></span>
+                </div>
 
-<div class="course-info">
-<b>Course name:</b> <span id="pCourseName"></span><br>
-<b>Course code:</b> <span id="pCourseCode"></span>
-</div>
+                <div class="info-boxes">
+                    <div class="box-1">
+                        <div class="box-label">Submitted by:</div>
+                        Name: <span id="pStudentName"></span><br>
+                        Class roll: <span id="pRoll"></span><br>
+                        Registration: <span id="pRegistation"></span><br>
+                        Department: <span id="pDepartmentInput"></span><br>
+                    </div>
 
-<div class="info-boxes">
-<div class="box-1">
-<b>Submitted by:</b><br><br>
-Name: <span id="pStudentName"></span><br>
-Class roll: <span id="pRoll"></span><br>
-Registation: <span id="pRegistation"></span><br>
-Department: <span id="pDepartmentInput"></span><br>
-</div>
+                    <div class="box-2">
+                        <div class="box-label">Submitted to:</div>
+                        <span id="pTeacherName"></span><br>
+                        <span id="pDesignation"></span><br>
+                        Institute of Leather Engineering and Technology<br>
+                        University of Dhaka
+                    </div>
+                </div>
 
-<div class="box-2">
-<b>Submitted to:</b><br><br>
-<span id="pTeacherName"></span><br>
-<span id="pDesignation"></span><br>
-Institute of Leather Engineering and Technology<br>
-University of Dhaka
-</div>
-</div>
+                <div class="submission-date">
+                    Submission date: <span id="pDate"></span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="submission-date">
-Submission date: <span id="pDate"></span>
-</div>
-
-</div>
-</div>
-</div>
-
-</div>
-
-<div class="credit">
-Made by <b>Rajin Shaleh Alam Rafi</b> |
-<a href="https://www.facebook.com/rsa.rafi/" target="_blank">Facebook</a>
 </div>
 
 <script src="script.js"></script>
